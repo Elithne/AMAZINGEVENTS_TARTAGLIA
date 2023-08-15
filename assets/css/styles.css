@@ -1,0 +1,23 @@
+.banner {
+    width: 100% !important;
+    height: 300px !important;
+    object-fit: cover !important;
+    object-position: 0% 25% !important;
+  }
+
+  .text-danger{
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  }
+
+  .nav-link{
+    color: rgb(172, 10, 94) !important;  
+  }
+
+  .active{
+    background-color: white !important;
+  }
+
+  .nav-link:hover{
+    color: rgb(198, 115, 159) !important;
+  }
