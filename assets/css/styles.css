@@ -21,3 +21,6 @@
   .nav-link:hover{
     color: rgb(198, 115, 159) !important;
   }
+  .mb-3 input{
+    width: 100% !important;
+  }

@@ -3,11 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Amazing Events</title>
+    <title>Home | Amazing Events</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon-32x32.png">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
+    <header class="bg-danger-subtle p-3">
+        <div class="row">
+            <div class="col-6 ms-3">
+                <figure>
+                <img src="assets/img/amazing_brand.png" alt="Logo" width="200">
+                </figure>
+            </div>
+            <div class="col-5" >
+                <nav class="navbar container-fluid">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="upcoming_events.html">Upcoming Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="past_events.html">Past Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="stats.html">Stats</a></li>
+                    </ul>                              
+                </nav>         
+            </div>
+        </div>               
+    </header>
+    <main class="bg-body-secondary">
+        <div>
+            <section class="position-relative">
+                <h1 class="display-2 text-danger z-1 position-absolute top-50 start-50 translate-middle">CONTACT US</h1>               
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="assets/img/optional_banner_1.jpg" class="d-block w-100 banner" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="assets/img/optional_banner_2.jpg" class="d-block w-100 banner" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="assets/img/optional_banner_3.jpg" class="d-block w-100 banner" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="assets/img/optional_banner_4.jpg" class="d-block w-100 banner" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="assets/img/optional_banner_5.jpg" class="d-block w-100 banner" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+            </section> 
+        </div>
+        <div class="d-flex justify-content-center text-danger vh-100 p-5">
+            <form method="GET">
+                <div class="mb-3 w-100" >
+                    <label class="form-label">
+                        <span>Name</span>
+                        <input type="text" class="form-control" placeholder="Type your name">
+                    </label> 
+                </div>
+                <div class="mb-3 w-100">                  
+                    <label class="form-label">
+                        <span>Email</span>
+                        <input type="email" class="form-control" placeholder="name@example.com">
+                    </label>                 
+                </div>
+                <div class="mb-3 w-100">
+                    <label class="form-label">
+                        <span>Message: </span>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </label>
+                    <input class="btn btn-outline-danger me-2" type="submit" value="Submit">                 
+                </div>
+            </form>
+            </div>                     
+    </main>
+    
+    <footer class="bg-danger-subtle p-3">
+        <div class="row">
+            <figure class="col-1 text-end">
+                <a href="http://www.facebook.com"><img src="assets/img/facebook.png" alt="facebook" width="40"></a>
+            </figure>
+            <figure class="col-1 text-center">
+                <a href="http://www.instagram.com"><img src="assets/img/instagram.png" alt="instagram" width="40"></a>
+            </figure>
+            <figure class="col-1">
+                <a href="http://www.facebook.com"><img src="assets/img/whatsapp.png" alt="instagram" width="40"></a>
+            </figure>
+            <h3 class="col-9 text-end">COHORT</h3>
+        </div>      
+    </footer>
 </body>
 </html>
