@@ -3,11 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Details | Amazing Events</title>
+    <title>Home | Amazing Events</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon-32x32.png">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
-<body>
+<body class="bg-danger-subtle">
+    <header class="bg-danger-subtle">
+        <div class="container">
+            <div class="row gx-5 override">
+                <div class="mt-1 col-12 col-md-5 col-lg-6 text-sm-center text-md-start">
+                    <figure>
+                    <img src="assets/img/amazing_brand.png" alt="Logo" width="200">
+                    </figure>
+                </div>
+                <div class="col-12 col-lg-6 col-md-7 mt-3 mt-lg-0 text-sm-center text-md-end" >
+                    <nav class="navbar">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="upcoming_events.html">Upcoming Events</a></li>
+                            <li class="nav-item"><a class="nav-link" href="past_events.html">Past Events</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="stats.html">Stats</a></li>
+                        </ul>                              
+                    </nav>         
+                </div>
+            </div> 
+        </div>                     
+    </header>
+    <main class="bg-body-secondary py-2">
+        <section class="my-5">
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <div class="card mb-3">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <img src="assets/img/music_concert.jpg" class="card-img m-md-4" alt="Details Picture">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body text-center">
+                                <h5 id="name" class="card-title pb-2">Name Title</h5>
+                                <p id="date" class="card-text">Date.</p>
+                                <p id="description" class="card-text">Description.</p>
+                                <p id="category" class="card-text">Category.</p>
+                                <p id="place" class="card-text">Place.</p>
+                                <p id="assistance" class="card-text">Assistance or Estimate.</p>
+                                <p id="price" class="card-text">Price.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>                                             
+                    </div>
+                </div>          
+            </div>  
+        </section>        
+    </main>
+    <footer class="bg-danger-subtle">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                    <figure class="pt-3 px-1">
+                        <a href="http://www.facebook.com"><img class="rounded-circle border  border-danger" src="assets/img/facebook.png" alt="facebook" width="60"></a>
+                    </figure>
+                    <figure class="pt-3 px-1">
+                        <a href="http://www.instagram.com"><img class="rounded-circle border border-2 border-danger" src="assets/img/instagram.png" alt="instagram" width="60"></a>
+                    </figure>
+                    <figure class="pt-3 px-1">
+                        <a href="https://wa.me/15551234567?text=I%20wanna%20know%20more"><img class="rounded-circle border border-2 border-danger" src="assets/img/whatsapp.png" alt="instagram" width="60"></a>
+                    </figure>
+                </div>
+                <div>
+                    <h3 class="text-end pt-4">DW02-TT</h3>
+                </div>
+            </div>
+        </div>             
+    </footer>
 </body>
 </html>

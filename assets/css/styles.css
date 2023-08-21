@@ -2,7 +2,8 @@
     width: 100% !important;
     height: 300px !important;
     object-fit: cover !important;
-    object-position: 0% 25% !important;
+    object-position: 0% 45% !important;
+    filter: blur(2px) !important;
   }
 
   .text-danger{
@@ -24,3 +25,23 @@
   .mb-3 input{
     width: 100% !important;
   }
+
+  .override{
+    margin: 0 auto !important;
+  }
+  
+  .erase-margin{
+    margin-bottom: 0 !important;
+  }
+
+  tr.no-bottom-border td {
+    border-bottom: none !important;
+  }
+
+  .erase-padding{
+    padding: 0 !important;
+  }
+
+  table {
+    table-layout: fixed !important;
+}
