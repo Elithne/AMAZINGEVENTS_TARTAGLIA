@@ -10,7 +10,7 @@ function createCards(arrayItems, containerId) {
                         <h5 class="card-title">${item.name}</h5>
                         <p class="card-text">${item.description}</p>
                         <div class="d-flex justify-content-between">
-                            <p class="card-text p-2">Price: ${item.price}</p>                           
+                            <p class="card-text p-2">Price: $${item.price}</p>                           
                             <div>
                                 <a href="details.html" class="btn btn-danger">Details</a>
                             </div>                    
