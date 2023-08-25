@@ -19,6 +19,10 @@
     background-color: white !important;
   }
 
+  .navbar-collapse{
+    flex-grow: 0 !important;
+}
+
   .nav-link:hover{
     color: rgb(198, 115, 159) !important;
   }
@@ -44,4 +48,10 @@
 
   table {
     table-layout: fixed !important;
+}
+
+.card img{
+  width: 100% !important;
+  height: 150px !important;
+  object-fit: cover !important;
 }
