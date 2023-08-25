@@ -55,3 +55,7 @@
   height: 150px !important;
   object-fit: cover !important;
 }
+
+.nav-item{
+  font-size: 1.3em !important;
+}
