@@ -1,6 +1,6 @@
 .banner {
     width: 100% !important;
-    height: 300px !important;
+    height: 10em !important;
     object-fit: cover !important;
     object-position: 0% 45% !important;
     filter: blur(2px) !important;
@@ -16,34 +16,17 @@
   }
 
   .active{
-    background-color: white !important;
+    font-weight: bold !important;
   }
-
-  .navbar-collapse{
-    flex-grow: 0 !important;
-}
 
   .nav-link:hover{
     color: rgb(198, 115, 159) !important;
-  }
-  .mb-3 input{
-    width: 100% !important;
-  }
-
-  .override{
-    margin: 0 auto !important;
-  }
-  
-  .erase-margin{
-    margin-bottom: 0 !important;
+    background-color: white;
+    border-radius: 10px;
   }
 
   tr.no-bottom-border td {
     border-bottom: none !important;
-  }
-
-  .erase-padding{
-    padding: 0 !important;
   }
 
   table {
@@ -57,5 +40,5 @@
 }
 
 .nav-item{
-  font-size: 1.3em !important;
+  font-size: 1.05em !important;
 }
