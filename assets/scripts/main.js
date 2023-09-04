@@ -53,12 +53,20 @@ function createCategories(arrayEvents) {
 // Función para filtrar eventos por búsqueda y categorías seleccionadas
 function filterEvents(arrayEvents) {
     let search = searchEvent.value.toLowerCase();
-    let filtered = arrayEvents.filter(event => event.name.toLowerCase().includes(search.toLowerCase()))
-
     let checked = Array.from(document.querySelectorAll('input.form-check-input:checked')).map(checkbox => checkbox.name);
-    if (checked.length > 0) {
-        filtered = filtered.filter(event => checked.includes(event.category))
-    }
+
+    let filtered = arrayEvents.filter(event => {
+        let nameMatches = event.name.toLowerCase().includes(search.toLowerCase());
+        let categoryMatches = checked.length === 0 || checked.includes(event.category);
+        return nameMatches && categoryMatches;
+    })
+
+        const noResultsMessage = document.getElementById('noResultsMessage');
+        if (filtered.length === 0) {
+            noResultsMessage.classList.remove('d-none'); // Mostrar mensaje
+        } else {
+            noResultsMessage.classList.add('d-none'); // Ocultar mensaje
+        }
     createCards(filtered); 
 }
 
