@@ -1,13 +1,15 @@
-let card = "";
-let checkbox = "";
-let categories = {};
-let checkboxContainer = document.getElementById('checkboxContainer');
+let card = ""; 
+let checkbox = ""; 
+let categories = {}; // Almacena las categorías únicas
+let checkboxContainer = document.getElementById('checkboxContainer'); 
 let cardsContainer = document.getElementById('cardsContainer');
-let searchEvent = document.querySelector('input[name=search]');
+let searchEvent = document.querySelector('input[name=search]'); 
 
+// Función para crear las tarjetas de eventos
 function createCards(arrayEvents) {
     card = "";
     arrayEvents.forEach(event => {
+        // Crea una tarjeta de evento con los datos
         card += `<div class="col-12 col-sm-6 col-lg-4 col-xl-3 my-1 d-flex align-items-stretch">
             <div class="card p-2 m-2 shadow-sm";">
                 <img src="${event.image}" class="card-img-top" alt="${event.name}">
@@ -24,17 +26,19 @@ function createCards(arrayEvents) {
             </div>
         </div>`;
     })    
-    cardsContainer.innerHTML = card;    
-};
+    cardsContainer.innerHTML = card;
+}
 
+// Función para crear los checkboxes de categorías
 function createCategories(arrayEvents) {
-    //FIltra las categorías que están repetidas 
+    checkbox = ""; 
+    // Filtra las categorías que están repetidas 
     arrayEvents.forEach(event => {
         const category = event.category;
 
-        // Verificamos si la categoría ya existe en el objeto
+        // Verifica si la categoría ya existe en el objeto
         if (!categories[category]) {
-            categories[category] = true; // Marcamos la categoría como existente
+            categories[category] = true; // Marca la categoría como existente
 
             checkbox += `
                 <label class="form-check-label p-3">
@@ -43,37 +47,39 @@ function createCategories(arrayEvents) {
                 </label>`;
         }
     });
-    checkboxContainer.innerHTML = checkbox; 
-};
+    checkboxContainer.innerHTML = checkbox;
+}
 
-function filterEvents(arrayEvents){
-    
-    let search = searchEvent.value;
+// Función para filtrar eventos por búsqueda y categorías seleccionadas
+function filterEvents(arrayEvents) {
+    let search = searchEvent.value.toLowerCase();
     let filtered = arrayEvents.filter(event => event.name.toLowerCase().includes(search.toLowerCase()))
 
     let checked = Array.from(document.querySelectorAll('input.form-check-input:checked')).map(checkbox => checkbox.name);
-    console.log(checked);
-    if(checked.length > 0){
+    if (checked.length > 0) {
         filtered = filtered.filter(event => checked.includes(event.category))
     }
-    createCards(filtered);
+    createCards(filtered); 
 }
 
-function filterBySearch(arrayEvents){
+// Función para filtrar eventos por búsqueda
+function filterBySearch(arrayEvents) {
     searchEvent.addEventListener('input', () => 
         filterEvents(arrayEvents)
     )
 }
 
-function filterByCategories(arrayEvents){
-    document.addEventListener('change', (e)=>{
-        if(e.target.classList.contains('form-check-input')){
+// Función para filtrar eventos por categorías seleccionadas
+function filterByCategories(arrayEvents) {
+    document.addEventListener('change', (e) => {
+        if (e.target.classList.contains('form-check-input')) {
             filterEvents(arrayEvents);
         }
     })  
 }
 
-function loadEventsContent(arrayEvents){
+// Función para cargar el contenido
+function loadEventsContent(arrayEvents) {
     createCards(arrayEvents);
     createCategories(arrayEvents);
     filterBySearch(arrayEvents);
