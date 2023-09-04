@@ -10,58 +10,42 @@
 </head>
 <body class="bg-danger-subtle">
     <header class="bg-danger-subtle">
-        <div class="container">
-            <div class="row gx-5 override">
-                <div class="mt-1 col-12 col-md-5 col-lg-6 text-sm-center text-md-start">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="mt-1 col-8 col-sm-9 col-md-10 col-lg-7">
                     <figure>
                     <img src="assets/img/amazing_brand.png" alt="Logo" width="200">
                     </figure>
                 </div>
-                <div class="col-12 col-lg-6 col-md-7 mt-3 mt-lg-0 text-sm-center text-md-end" >
-                    <nav class="navbar">
-                        <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="upcoming_events.html">Upcoming Events</a></li>
-                            <li class="nav-item"><a class="nav-link" href="past_events.html">Past Events</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                            <li class="nav-item"><a class="nav-link" href="stats.html">Stats</a></li>
-                        </ul>                              
-                    </nav>         
+                <div class="col-4 col-sm-3 col-md-2 col-lg-5" >                 
+                    <nav class="navbar navbar-expand-lg justify-content-end text-end">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <ul class="navbar-nav">
+                                <li class="nav-item px-1 pt-2 pt-lg-0"><a class="nav-link" href="index.html">Home</a></li>
+                                <li class="nav-item px-1"><a class="nav-link" href="upcoming_events.html">Upcoming Events</a></li>
+                                <li class="nav-item px-1"><a class="nav-link" href="past_events.html">Past Events</a></li>
+                                <li class="nav-item px-1"><a class="nav-link" href="contact.html">Contact</a></li>
+                                <li class="nav-item px-1"><a class="nav-link" href="stats.html">Stats</a></li>
+                            </ul>
+                          </div>
+                      </nav>       
                 </div>
             </div> 
         </div>                     
     </header>
     <main class="bg-body-secondary py-2">
-        <section class="my-5">
-            <div class="container">
-                <div class="d-flex justify-content-center">
-                    <div class="card mb-3">
-                        <div class="row">
-                          <div class="col-md-4">
-                            <img src="assets/img/music_concert.jpg" class="card-img m-md-4" alt="Details Picture">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body text-center">
-                                <h5 id="name" class="card-title pb-2">Name Title</h5>
-                                <p id="date" class="card-text">Date.</p>
-                                <p id="description" class="card-text">Description.</p>
-                                <p id="category" class="card-text">Category.</p>
-                                <p id="place" class="card-text">Place.</p>
-                                <p id="assistance" class="card-text">Assistance or Estimate.</p>
-                                <p id="price" class="card-text">Price.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>                                             
-                    </div>
-                </div>          
+        <div class=" d-flex justify-content-center">
+            <div class="card container-fluid m-5" id="details-card">          
             </div>  
-        </section>        
+        </div>        
     </main>
     <footer class="bg-danger-subtle">
         <div class="container">
-            <div class="d-flex justify-content-between">
-                <div class="d-flex">
+            <div class="d-flex justify-content-sm-between flex-column flex-sm-row">
+                <div class="d-flex justify-content-center">
                     <figure class="pt-3 px-1">
                         <a href="http://www.facebook.com"><img class="rounded-circle border  border-danger" src="assets/img/facebook.png" alt="facebook" width="40"></a>
                     </figure>
@@ -73,10 +57,14 @@
                     </figure>
                 </div>
                 <div>
-                    <h3 class="text-end pt-4">DW02-TT</h3>
+                    <h3 class="text-center pt-4">DW02-TT</h3>
                 </div>
             </div>
         </div>             
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="assets/scripts/data.js"></script>
+    <script src="assets/scripts/details.js"></script>
 </body>
 </html>
