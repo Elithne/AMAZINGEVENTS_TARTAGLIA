@@ -5,7 +5,8 @@ const id = params.get("id");
 
 const eventsAvailable = data.events.map(event => {
     let aux = {}
-    aux.date = new Date(event.date),
+    aux.date = event.date,
+    aux.dateToEvaluate = new Date(event.date);
     aux.image = event.image,
     aux.name = event.name,
     aux.description = event.description,
@@ -15,7 +16,7 @@ const eventsAvailable = data.events.map(event => {
     aux.price = event.price,
     aux.id = event._id;
 
-    if(currentDate > aux.date){
+    if(currentDate > aux.dateToEvaluate){
         aux.assistance = event.assistance;
     } else{
         aux.estimate = event.estimate;
@@ -39,7 +40,7 @@ cardContainer.innerHTML = `
             <p id="category" class="card-text">Category: ${eventSelected.category}.</p>
             <p id="place" class="card-text">Place: ${eventSelected.place}</p>
             <p id="capacity" class="card-text">Capacity: ${eventSelected.capacity} people</p>` +
-            (currentDate > eventSelected.date ?
+            (currentDate > eventSelected.dateToEvaluate ?
                 `<p id="assistance" class="card-text">Assistance: ${eventSelected.assistance} attendees</p>` :
                 `<p id="assistance" class="card-text">Estimate: ${eventSelected.estimate} attendees</p>`) +
             `<p id="price" class="card-text">Price: $${eventSelected.price}</p>
