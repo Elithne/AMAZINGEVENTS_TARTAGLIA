@@ -42,3 +42,7 @@
 .nav-item{
   font-size: 1.05em !important;
 }
+
+.main-content {
+  min-height: 76vh; /* Al menos la altura de la ventana */
+}

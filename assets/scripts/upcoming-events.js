@@ -5,7 +5,6 @@ for (let event of data.events) {
 const eventDate = new Date(event.date);
     if (eventDate > currentDate) {
         upcomingEvents.push(event);
-        console.log(eventDate);
     }
 }
 
