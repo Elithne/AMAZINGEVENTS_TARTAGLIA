@@ -3,7 +3,20 @@ let checkbox = "";
 let categories = {}; // Almacena las categorías únicas
 let checkboxContainer = document.getElementById('checkboxContainer'); 
 let cardsContainer = document.getElementById('cardsContainer');
-let searchEvent = document.querySelector('input[name=search]'); 
+let searchEvent = document.querySelector('input[name=search]');
+let urlApi = 'https://mindhub-xj03.onrender.com/api/amazing';
+let data = {};
+
+async function getEventsData(){
+    try{
+        const response = await fetch(urlApi); //Returns a promise 
+        const _data = await response.json(); //Returns data  
+        data = await _data;
+        
+    }catch(error){
+        console.log(error);
+    }
+}
 
 // Función para crear las tarjetas de eventos
 function createCards(arrayEvents) {
@@ -87,9 +100,10 @@ function filterByCategories(arrayEvents) {
 }
 
 // Función para cargar el contenido
-function loadEventsContent(arrayEvents) {
-    createCards(arrayEvents);
-    createCategories(arrayEvents);
-    filterBySearch(arrayEvents);
-    filterByCategories(arrayEvents);
+function loadEventsContent(eventsData) {
+        console.log(eventsData);
+        createCards(eventsData);
+        createCategories(eventsData);
+        filterBySearch(eventsData);
+        filterByCategories(eventsData);
 }

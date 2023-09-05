@@ -1,3 +1,4 @@
+
 const currentDate = new Date(data.currentDate);
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);

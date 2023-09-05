@@ -1,1 +1,2 @@
-loadEventsContent(data.events);
+getEventsData().then(response => loadEventsContent(data.events))
+
