@@ -25,8 +25,8 @@
     border-radius: 10px;
   }
 
-  tr.no-bottom-border td {
-    border-bottom: none !important;
+  tr.no-top-border td {
+    border-top: none !important;
   }
 
   table {
