@@ -3,6 +3,7 @@ getEventsData().then(response => {
     let highestContainer = document.getElementById('highestStatistics');
     let upcomingContainer = document.getElementById('upcomingStatistics');
     let pastContainer = document.getElementById('pastStatistics');
+    let pastEvents = []
 
     
     setHighestStatistics();
@@ -11,50 +12,47 @@ getEventsData().then(response => {
    
     function setHighestStatistics(){
         let highestRow = "";
-        let highestAssistance = getHighestAssistance(events);
-        let lowestAssistance = getLowestAssistance(events);
-        let largestCapacity = getLargestCapacity(events);
+
+        for (let event of data.events) {  
+            const eventDate = new Date(event.date);
+                if (eventDate < currentDate) {
+                    pastEvents.push(event);
+            
+                }
+            }
+
+        let highestAssistance = getHighestAssistance(pastEvents);
+        let lowestAssistance = getLowestAssistance(pastEvents);
+        let largestCapacity = getLargestCapacity(data.events);
         
         for(let i = 0; i < 3; i++){
             highestRow+= `
             <tr>
-                <td>${highestAssistance.name}</td>
-                <td>${lowestAssistance.name}</td>
-                <td>${largestCapacity.name}</td>
+                <td>${highestAssistance[i].name}</td>
+                <td>${lowestAssistance[i].name}</td>
+                <td>${largestCapacity[i].name}</td>
             </tr>` 
-        } console.log(events);
+        }
 
         highestContainer.innerHTML = highestRow;
     }
 
-    function getHighestAssistance(){
-        return events.reduce((highest, current) =>{
-            if(highest.assistance > current.assistance){
-                return highest;
-            } else{
-                return current;
-            }
-        })
+    function getHighestAssistance(pastEvents){   
+        let orderedEvents = pastEvents;     
+        orderedEvents.sort((a, b) => b.assistance - a.assistance);
+        return orderedEvents.slice(0, 3); // Devuelve los primeros 3 eventos
     }
 
-    function getLowestAssistance(){
-        return events.reduce((lowest, current) =>{
-            if(lowest.assistance < current.assistance){
-                return lowest;
-            } else{
-                return current;
-            }
-        })
+    function getLowestAssistance(pastEvents){
+        let orderedEvents = pastEvents;     
+        orderedEvents.sort((a, b) => a.assistance - b.assistance); // Ordenar en orden ascendente
+        return orderedEvents.slice(0, 3);
     }
 
-    function getLargestCapacity(){
-        return events.reduce((highest, current) =>{
-            if(highest.capacity < current.capacity){
-                return highest;
-            } else{
-                return current;
-            }
-        })
+    function getLargestCapacity(events) {
+        let orderedEvents = events; 
+        orderedEvents.sort((a, b) => b.capacity - a.capacity);
+        return orderedEvents.slice(0, 3); 
     }
 
     function setUpcomingStatistics() {
@@ -70,7 +68,7 @@ getEventsData().then(response => {
             categoriesFiltered.forEach(event => {
                 const eventDate = new Date(event.date);
                 if (eventDate > currentDate) {
-                    totalRevenuePerCategory += (event.price * event.estimate);
+                    totalRevenuePerCategory += (event.price * event.estimate); 
                     
                     totalAttendeesPerCategory += event.estimate;
                     totalCapacityPerCategory += event.capacity;
