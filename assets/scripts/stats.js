@@ -78,13 +78,15 @@ getEventsData().then(response => {
                 totalAttendeesPerCategory,
                 totalCapacityPerCategory
             );
-
-            upcomingRow += `
+            if(totalAttendeesPerCategory > 0){
+                upcomingRow += `
                 <tr>
                     <td>${category}</td>
                     <td>$${totalRevenuePerCategory}</td>
                     <td>${percentageOfAssistancePerCategory}%</td>
                 </tr>`;
+            }
+            
         });
 
         upcomingContainer.innerHTML = upcomingRow;
@@ -114,12 +116,14 @@ getEventsData().then(response => {
                 totalCapacityPerCategory
             );
 
-            pastRow += `
+            if(totalAttendeesPerCategory > 0){
+                pastRow += `
                 <tr>
                     <td>${category}</td>
                     <td>$${totalRevenuePerCategory}</td>
                     <td>${percentageOfAssistancePerCategory}%</td>
                 </tr>`;
+            }                  
         });
 
 
@@ -133,7 +137,6 @@ getEventsData().then(response => {
         } else{
             return 0;
         }
-        
     }
 
 }); 
