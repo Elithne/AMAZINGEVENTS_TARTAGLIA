@@ -37,14 +37,16 @@ getEventsData().then(response => {
     }
 
     function getHighestAssistance(pastEvents){   
-        let orderedEvents = pastEvents;     
-        orderedEvents.sort((a, b) => b.assistance - a.assistance);
+        let orderedEvents = pastEvents;
+        orderedEvents.sort((a, b) => ((b.assistance * 100) / b.capacity) - ((a.assistance * 100) / a.capacity));
+        
         return orderedEvents.slice(0, 3); // Devuelve los primeros 3 eventos
     }
 
     function getLowestAssistance(pastEvents){
         let orderedEvents = pastEvents;     
-        orderedEvents.sort((a, b) => a.assistance - b.assistance); // Ordenar en orden ascendente
+        orderedEvents.sort((a, b) => ((a.assistance * 100) / a.capacity) - ((b.assistance * 100) / b.capacity)); // Ordenar en orden ascendente
+        console.log(orderedEvents);
         return orderedEvents.slice(0, 3);
     }
 
@@ -74,7 +76,7 @@ getEventsData().then(response => {
                 }
             });
             
-            let percentageOfAssistancePerCategory = getPercentageOfAssistancePerCategory(
+            let percentageOfAssistancePerCategory = getPercentageOfAssistance(
                 totalAttendeesPerCategory,
                 totalCapacityPerCategory
             );
@@ -111,7 +113,7 @@ getEventsData().then(response => {
             });
 
 
-            let percentageOfAssistancePerCategory = getPercentageOfAssistancePerCategory(
+            let percentageOfAssistancePerCategory = getPercentageOfAssistance(
                 totalAttendeesPerCategory,
                 totalCapacityPerCategory
             );
@@ -130,8 +132,8 @@ getEventsData().then(response => {
             pastContainer.innerHTML = pastRow;
     }
     
-    function getPercentageOfAssistancePerCategory(totalAttendees, totalCapacity) {
-        let percentage = totalAttendees * 100 / totalCapacity;
+    function getPercentageOfAssistance(attendees, capacity) {
+        let percentage = attendees * 100 / capacity;
         if(percentage > 0){
             return Math.round(percentage);
         } else{
