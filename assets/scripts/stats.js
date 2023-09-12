@@ -5,7 +5,6 @@ getEventsData().then(response => {
     let pastContainer = document.getElementById('pastStatistics');
     let pastEvents = []
 
-    
     setHighestStatistics();
     setUpcomingStatistics();
     setPastStatistics(); 
